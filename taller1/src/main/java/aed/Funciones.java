@@ -94,20 +94,21 @@ class Funciones {
         }
         return true;
     }
+    //Creo esta funcion para facilitar esSufijo
+    String darVueltaString(String s1) {
+        int finals1= s1.length() -1;
+        String nuevo= new String() ;
+        while(finals1!=-1) {
+            nuevo=nuevo+ s1.charAt(finals1);
+            finals1--;}
+            return nuevo;
+    }
 
     boolean esSufijo(String s1, String s2) {
         if(s2.length()<s1.length()) {
             return false;
         }
-        int finals1= s1.length() -1;
-        int finals2= s2.length() -1;
-        while(finals1!=-1) {
-            if(s1.charAt(finals1)!=s2.charAt(finals2)) {
-                return false;
-            }
-        finals1--;
-        finals2--;
-        }
-        return true;
+        return esPrefijo(darVueltaString(s1), darVueltaString(s2));
+        
     }
 }
