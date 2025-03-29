@@ -31,7 +31,7 @@ public class Fecha {
 
     @Override
     public boolean equals(Object otra) {
-        if(otra.getClass()==this.getClass()){
+        if(otra!=null && otra.getClass()==this.getClass()){
             Fecha otraFecha= (Fecha) otra;
             return (otraFecha.dia==this.dia && otraFecha.mes==this.mes);
         }

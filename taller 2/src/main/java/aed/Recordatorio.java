@@ -25,16 +25,18 @@ public class Recordatorio {
 
     @Override
     public String toString() {
-        // Implementar
         return mensaje+" @ "+fecha.toString()+ " "+horario.toString();
     }
 
 
     @Override
     public boolean equals(Object otro) {
-        if(otro.getClass()==this.getClass()){
+        if(otro!=null && otro.getClass()==this.getClass() ){
             Recordatorio otroNuevo= (Recordatorio) otro;
-            if(otroNuevo.fecha.equals(this.fecha) && otroNuevo.horario.equals(this.horario) && "mensaje".equals("mensaje")){
+            if(otroNuevo.mensaje==null){
+                return false;
+            }
+            if(otroNuevo.fecha.equals(this.fecha) && otroNuevo.horario.equals(this.horario) && otroNuevo.mensaje.equals(this.mensaje)){
                 return true;
             }
         }

@@ -30,7 +30,7 @@ public class Horario {
 
     @Override
     public boolean equals(Object otro) {
-        if(otro.getClass()==this.getClass()){
+        if(otro!=null && otro.getClass()==this.getClass() ){
             Horario otroHorario= (Horario) otro;
             return (otroHorario.minutos==this.minutos && otroHorario.hora==this.hora );
         }
