@@ -9,7 +9,6 @@ public class ListaEnlazada<T> implements Secuencia<T> {
    private Nodo primero;
    private Nodo ultimo;
    private int longitud;
-   private Iterador<T> iterador;
 
    private class Nodo {
        T valor;
@@ -138,7 +137,6 @@ public class ListaEnlazada<T> implements Secuencia<T> {
 
 
    private class ListaIterador implements Iterador<T> {
-       // Completar atributos privados
         Nodo iterador;
 
         public ListaIterador() {
@@ -160,13 +158,11 @@ public class ListaEnlazada<T> implements Secuencia<T> {
 
         }
        public boolean haySiguiente() {
-            if (iterador==null || iterador.sig==null) {return false;}
-            else{return true;}
+           return (iterador!=null && iterador.sig!=null );
        }
       
        public boolean hayAnterior() {
-        if (iterador==null || iterador.ant==null ) {return false;}
-        else{return true;}
+        return (iterador!=null && iterador.ant!=null );
        }
 
 
